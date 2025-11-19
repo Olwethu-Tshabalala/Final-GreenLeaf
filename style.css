@@ -1,0 +1,276 @@
+/* ===============================
+   GreenLeaf Market - Style Sheet
+   =============================== */
+
+/* General Styles */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7f7f2;
+  color: #2f3e1f;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #d2e3c8;
+  padding: 10px 0;
+  border-bottom: 2px solid #aac999;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2f3e1f;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #5c8a3d;
+}
+
+/* Headings */
+h1, h2 {
+  color: #345c2c;
+  margin-top: 30px;
+}
+
+/* Paragraphs */
+p {
+  width: 80%;
+  margin: 10px auto 30px;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  background-color: #d2e3c8;
+  color: #2f3e1f;
+  padding: 15px 0;
+  margin-top: 40px;
+  border-top: 2px solid #aac999;
+}
+
+/* ===============================
+   Product Gallery
+   =============================== */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px auto;
+  width: 85%;
+}
+
+.gallery-item img {
+  width: 230px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 2px solid #aac999;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* ===============================
+   Lightbox Modal
+   =============================== */
+
+.lightbox {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 80px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-content {
+  margin: auto;
+  display: block;
+  width: 60%;
+  max-width: 800px;
+  border-radius: 10px;
+}
+
+.caption {
+  color: #f7f7f2;
+  text-align: center;
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  color: #f7f7f2;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #aac999;
+}
+
+/* ===============================
+   Contact Form
+   =============================== */
+
+.contact-form {
+  background-color: #e7f0e4;
+  border-radius: 10px;
+  width: 80%;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid #aac999;
+  text-align: left;
+}
+
+.contact-form label {
+  font-weight: bold;
+  color: #2f3e1f;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 95%;
+  padding: 10px;
+  margin: 8px 0 15px;
+  border-radius: 6px;
+  border: 1px solid #aac999;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.contact-form button {
+  background-color: #5c8a3d;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.contact-form button:hover {
+  background-color: #4b7331;
+}
+
+/* ===============================
+   Map Section
+   =============================== */
+
+.map-section {
+  margin: 40px auto;
+  width: 85%;
+  text-align: center;
+}
+
+.map-section h2 {
+  margin-bottom: 15px;
+  color: #345c2c;
+}
+
+/* ===============================
+   Enquiry Page Form (Future Use)
+   =============================== */
+
+.enquiry-form {
+  background-color: #e7f0e4;
+  border-radius: 10px;
+  width: 80%;
+  margin: 30px auto;
+  padding: 20px;
+  border: 2px solid #aac999;
+  text-align: left;
+}
+
+/* ===============================
+   Utility Styles
+   =============================== */
+
+button, input, select, textarea {
+  outline: none;
+}
+
+a {
+  transition: color 0.3s ease;
+}
+
+/* ===============================
+   Home Page – Image Resizing
+   =============================== */
+
+/* Hero image */
+.hero-img {
+  width: 60%;    /* Reduce from full-size */
+  max-width: 500px;
+  height: auto;
+  border-radius: 12px;
+  border: 2px solid #aac999;
+  margin-top: 20px;
+}
+
+/* Highlights images */
+.highlight-box img {
+  width: 220px;       /* Slightly smaller than before */
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #aac999;
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   CTA Button (Explore Our Products)
+   =============================== */
+
+.cta-btn {
+  display: inline-block;
+  background-color: #5c8a3d;   /* matches your hover nav colour */
+  color: white;
+  padding: 12px 25px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;            /* matches heading scale better */
+  margin-top: 20px;
+  border: 2px solid #345c2c;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-btn:hover {
+  background-color: #4b7331;   /* darker green hover */
+  transform: scale(1.05);      /* subtle hover animation */
+}
+

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenLeaf Market | Contact Us</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <header>
+    <img src="images/greenleaf logo.jpg" alt="GreenLeaf Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li><a href="Enquiry.html">Enquiry</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Contact GreenLeaf Market</h1>
+    <p>We’d love to hear from you! Please fill out the form below or visit one of our branches.</p>
+
+    <!-- Contact Form -->
+    <section class="contact-form">
+      <form id="contactForm">
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="subject">Type of Query:</label><br>
+        <select id="subject" name="subject" required>
+          <option value="">--Select--</option>
+          <option value="General">General Enquiry</option>
+          <option value="Feedback">Feedback</option>
+          <option value="Partnership">Partnership</option>
+        </select><br><br>
+
+        <label for="message">Your Message:</label><br>
+        <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+      <h2>Our Locations</h2>
+      <div id="map" style="height: 400px; width: 90%; margin: 0 auto; border-radius: 10px;"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 GreenLeaf Market | Promoting Healthy, Sustainable Living</p>
+  </footer>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script>
+    // Contact Form Validation
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent actual form submission
+
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value;
+      const message = document.getElementById('message').value.trim();
+
+      if (name === "" || email === "" || subject === "" || message === "") {
+        alert("Please fill in all fields before submitting.");
+      } else if (!email.includes("@") || !email.includes(".")) {
+        alert("Please enter a valid email address.");
+      } else {
+        alert("Message sent successfully! Thank you for contacting GreenLeaf Market.");
+        document.getElementById('contactForm').reset();
+      }
+    });
+
+    // Leaflet Map Setup
+    const map = L.map('map').setView([-33.9249, 18.4241], 9); // Cape Town area
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Add markers for two locations
+    const capeTownMarker = L.marker([-33.9249, 18.4241]).addTo(map)
+      .bindPopup("<b>GreenLeaf Market - Cape Town</b><br>123 Green Street, Cape Town");
+
+    const stellenboschMarker = L.marker([-33.9333, 18.8667]).addTo(map)
+      .bindPopup("<b>GreenLeaf Market - Stellenbosch</b><br>45 Vineyard Road, Stellenbosch");
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GreenLeaf Market | Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="images/greenleaf logo.jpg" alt="GreenLeaf Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="Products.html">Products</a></li>
+        <li><a href="Enquiry.html">Enquiry</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Our Fresh Organic Products</h1>
+    <p>At GreenLeaf Market, we are proud to offer a variety of locally sourced and organic products that support healthy living and sustainability.</p>
+
+    <!-- Product Gallery Section -->
+    <section class="gallery">
+      <div class="gallery-item">
+        <img src="images/fresh produce.jpg" alt="Fresh Produce">
+      </div>
+      <div class="gallery-item">
+        <img src="images/fruit bowl.jpg" alt="Fruit Bowl">
+      </div>
+      <div class="gallery-item">
+        <img src="images/dairy products.jpg" alt="Dairy Products">
+      </div>
+      <div class="gallery-item">
+        <img src="images/pantry items.jpg" alt="Pantry Items">
+      </div>
+      <div class="gallery-item">
+        <img src="images/Smoothies.png" alt="Smoothies">
+      </div>
+    </section>
+  </main>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+    <div class="caption" id="caption"></div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 GreenLeaf Market | Promoting Healthy, Sustainable Living</p>
+  </footer>
+
+  <!-- JavaScript for Lightbox -->
+  <script>
+    // Get lightbox elements
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const captionText = document.getElementById('caption');
+    const closeBtn = document.getElementsByClassName('close')[0];
+
+    // Open lightbox when image clicked
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'block';
+        lightboxImg.src = img.src;
+        captionText.innerHTML = img.alt;
+      });
+    });
+
+    // Close lightbox when 'X' clicked
+    closeBtn.onclick = function() {
+      lightbox.style.display = 'none';
+    };
+
+    // Close lightbox when user clicks outside image
+    window.onclick = function(event) {
+      if (event.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    };
+  </script>
+</body>
+</html>
